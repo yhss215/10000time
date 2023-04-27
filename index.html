@@ -1,0 +1,84 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>이미지 겹치기</title>
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	<body>
+		<header>
+			<div class="header">
+				<div class="image-wrapper"></div>
+				<img class="title1" src="img/clock.png" alt="이미지1">
+				<img class="title2" src="img/text.png" alt="이미지2">
+			</div>
+			<div class="subtitle">
+				<h2>"연습은 어제의 당신보다 당신을 더 낫게 만든다."</h2>
+			</div>
+			<div class="main_image">
+				<img src="img/quotes.png" width="100%" height="20px">
+		
+		
+				<h1 class="main_image_text" style="font-size:13px">아기사자 여러분은
+					<p>어떤 분야의 전문가가 되기 위해서는</p>
+					<p></p> 최소 1만 시간의 훈련이 필요합니다.</p>
+					<form>
+					  <p>
+						"나는 <input type="text" id="what" size="20" placeholder="예) 프로그래밍"> 전문가가 될 것이다.
+					  </p>
+					  <p>
+						그래서 앞으로 매일 하루에 <input type="text" id="time" size="20" placeholder="예) 5"> 시간씩 훈련할 것이다.
+					  </p>
+					  <div class="button-container">
+						<button type="button" onclick="showText()">나는 며칠동안 훈련을 해야 전문가가 될까?</button>
+						<img src="img/click.png" style="width: auto">
+					  </div>
+					</form>
+					<p id="output"></p>
+					<script>
+					  function showText() {
+						var what = document.getElementById("what").value;
+						var time = document.getElementById("time").value;
+						var output = document.getElementById("output");
+						var hours = 10000/time;
+						output.innerHTML = "나는 " + what + " 전문가가 되기 위해<br>대략" +hours + "일 이상 훈련 하셔야 합니다.";
+					  }
+					</script>
+		</div>
+			
+		
+		</header>
+		<footer>
+		<div class="button-container">
+			<button onclick="openTraining()">훈련하러 가기</button>
+
+			<script>
+ 				 function openTraining() {
+					var width = 550;
+					var height = 550;
+					var left = (screen.width/2) - (width/2);
+					var top = (screen.height/2) - (height/2);
+					window.open("file:///C:/Users/yhss2/Desktop/%EC%A1%B0%EB%A1%B1%EC%9D%B4/web.html", "", "width="+width+",height="+height+",left="+left+",top="+top);
+  	}
+			</script>
+			
+
+			
+			<button onclick="copyURL()">URL복사하기</button>
+
+			<script>
+			function copyURL() {
+ 			 var url = window.location.href;
+  			navigator.clipboard.writeText(url).then(function() {
+    		alert("URL이 복사되었습니다.");
+ 			 }, function() {
+  			  alert("URL 복사에 실패했습니다.");
+ 			 });
+			}
+			</script>
+			
+		
+		  </div>
+		</footer>
+	</body>
+	</html>
